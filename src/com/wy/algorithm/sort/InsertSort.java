@@ -32,6 +32,30 @@ public class InsertSort {
         }
      }
 
+    public static <AnyType extends Comparable<? super AnyType>>
+    void insertionSort(AnyType [] a,int left,int right){
+        int nowIndex;//现在排序的元素的索引下标
+
+//        第一层循环，从下标1-a.length-1，总共O(n-1)
+        for (int i=left+1;i<=right;i++){
+            AnyType sortNum=a[i];
+            int j;
+            for (j=i;j>left;j--){//第二层循环,比较大小，若大于当前排序元素，那么后移一位
+                if (sortNum.compareTo(a[j-1])<0){//若当前元素比前一个元素小，那么将当前元素赋值给前一个元素
+                    a[j]=a[j-1];
+                }else break;
+            }
+            a[j]=sortNum;
+
+            System.out.print("第"+i+"次迭代后的结果数组为：");
+            StringBuilder sb=new StringBuilder();
+            for (j=left;j<=right;j++)
+                sb.append(a[j]+",");
+            sb.deleteCharAt(sb.lastIndexOf(","));
+            System.out.println(sb.toString());
+        }
+    }
+
     public static void main(String[] args){
 //        InsertSort insertSort=new InsertSort();
 //        int[] a={34,8,64,51,32,21};

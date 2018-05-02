@@ -47,14 +47,15 @@ public class QuickSort_1 {
         if (left+CUTOFF<=right){
             AnyType pivot=median3(a,left,right);//获取枢纽
 
-//            int i=left,j=right-1;
-            int i=left+1,j=right-2;//最左和最右分别是比枢纽小的大的元素，所以不用继续排
+            int i=left,j=right-1;
+//            int i=left+1,j=right-2;//最左和最右分别是比枢纽小的大的元素，所以不用继续排
             for (;;){
-//                while (a[++i].compareTo(pivot)<0){}
-//                while (a[--j].compareTo(pivot)>0){}
-//                改进，但是这段若a[i]=a[j]=pivot则会无限循环
-                while (a[i].compareTo(pivot)<0)i++;
-                while (a[j].compareTo(pivot)>0)j--;
+                while (a[++i].compareTo(pivot)<0){}
+                while (a[--j].compareTo(pivot)>0){}
+
+//                改进，但是这段若a[i]=a[j]=pivot则会无限循环，用上边的两个while的话不会无限循环
+//                while (a[i].compareTo(pivot)<0)i++;
+//                while (a[j].compareTo(pivot)>0)j--;
                 if (i<j)//如果这个时候i还是比j小，那么将i和j的数交换
                     swapReferences(a,i,j);
                 else break;
