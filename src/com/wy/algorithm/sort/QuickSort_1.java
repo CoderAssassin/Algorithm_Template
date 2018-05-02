@@ -52,7 +52,7 @@ public class QuickSort_1 {
             for (;;){
 //                while (a[++i].compareTo(pivot)<0){}
 //                while (a[--j].compareTo(pivot)>0){}
-//                改进，若left=pivot=right上述的代码会无限循环
+//                改进，但是这段若a[i]=a[j]=pivot则会无限循环
                 while (a[i].compareTo(pivot)<0)i++;
                 while (a[j].compareTo(pivot)>0)j--;
                 if (i<j)//如果这个时候i还是比j小，那么将i和j的数交换
