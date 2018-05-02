@@ -4,6 +4,7 @@ package com.wy.algorithm.sort;
  * @author aliyang
  * @date 18-5-2 上午10:37
  * 计数基数排序，不使用ArrayList，使用计数器，记录每个桶里装多少个元素
+ * 用于定长字符串，时间复杂度为O(NL)
  */
 public class CountingRadixSort {
 
