@@ -36,7 +36,7 @@ public class InsertSort {
     void insertionSort(AnyType [] a,int left,int right){
         int nowIndex;//现在排序的元素的索引下标
 
-//        第一层循环，从下标1-a.length-1，总共O(n-1)
+//        第一层循环，从下标left+1到right
         for (int i=left+1;i<=right;i++){
             AnyType sortNum=a[i];
             int j;

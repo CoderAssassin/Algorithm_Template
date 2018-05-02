@@ -67,7 +67,7 @@ public class QuickSelect {
                 quickSelect(a,i+1,right,k);
         }
         else
-            InsertSort.insertionSort(a);
+            InsertSort.insertionSort(a,left,right);
     }
 
 }
