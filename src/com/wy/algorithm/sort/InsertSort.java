@@ -8,15 +8,16 @@ package com.wy.algorithm.sort;
  * 若搜索的数比sortNum大，那么往后移动一位，直到前边的数小于等于sortNum。即：比较---->移动
  */
 public class InsertSort {
-    public void insertionSort(int [] a){
+    public static <AnyType extends Comparable<? super AnyType>>
+    void insertionSort(AnyType [] a){
         int nowIndex;//现在排序的元素的索引下标
 
 //        第一层循环，从下标1-a.length-1，总共O(n-1)
         for (int i=1;i<a.length;i++){
-            int sortNum=a[i];
+            AnyType sortNum=a[i];
             int j;
             for (j=i;j>0;j--){//第二层循环,比较大小，若大于当前排序元素，那么后移一位
-                if (sortNum<a[j-1]){//若当前元素比前一个元素小，那么将当前元素赋值给前一个元素
+                if (sortNum.compareTo(a[j-1])<0){//若当前元素比前一个元素小，那么将当前元素赋值给前一个元素
                     a[j]=a[j-1];
                 }else break;
             }
@@ -32,8 +33,8 @@ public class InsertSort {
      }
 
     public static void main(String[] args){
-        InsertSort insertSort=new InsertSort();
-        int[] a={34,8,64,51,32,21};
-        insertSort.insertionSort(a);
+//        InsertSort insertSort=new InsertSort();
+//        int[] a={34,8,64,51,32,21};
+//        insertSort.insertionSort(a);
     }
 }
